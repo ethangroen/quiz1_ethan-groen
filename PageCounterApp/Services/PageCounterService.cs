@@ -2,11 +2,14 @@
 
 namespace PageCounterApp.Services
 {
-    public class PageCounterService : IPageCounterService
+	// Implement the IPageCounterService interface in the PageCounterService class
+	public class PageCounterService : IPageCounterService
     {
-        private readonly Dictionary<string, int> _pageCounts = new Dictionary<string, int>();
+		// Store page visit counts in memory using a dictionary
+		private readonly Dictionary<string, int> _pageCounts = new Dictionary<string, int>();
 
-        public int IncrementPageCount(string pageName)
+		// Increment the count for the given page and return the updated count
+		public int IncrementPageCount(string pageName)
         {
             if (!_pageCounts.ContainsKey(pageName))
                 _pageCounts[pageName] = 0;

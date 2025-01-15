@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Register the IPageCounterService with its implementation PageCounterService as a singleton
 builder.Services.AddSingleton<IPageCounterService, PageCounterService>();
 
 var app = builder.Build();
